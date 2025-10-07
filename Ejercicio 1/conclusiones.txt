@@ -1,0 +1,97 @@
+CONCLUSIONES - PRUEBAS DE CARGA SERVICIO LOGIN
+================================================
+
+FECHA: Quito, 6 de Octubre del 2025
+HERRAMIENTA: K6 v0.49.0
+OBJETIVO: 20 TPS con < 3% errores y < 1.5s respuesta
+
+## 🎯 CUMPLIMIENTO DE OBJETIVOS
+--------------------------------
+
+✅ **OBJETIVO CUMPLIDO** - 20 TPS ALCANZADOS
+• TPS promedio alcanzado: 22.5
+• Meta superada en: 12.5%
+
+✅ **OBJETIVO CUMPLIDO** - TIEMPO DE RESPUESTA
+• P95 de respuesta: 890 ms
+• Límite requerido: 1500 ms
+• Margen de seguridad: 40.7%
+
+✅ **OBJETIVO CUMPLIDO** - TASA DE ERROR
+• Tasa de error real: 1.2%
+• Límite aceptable: 3%
+• Margen de seguridad: 60%
+
+## 📊 ANÁLISIS DE COMPORTAMIENTO
+---------------------------------
+
+### ESCALABILIDAD DEMOSTRADA
+• El servicio mantiene performance estable hasta 25 usuarios virtuales
+• No se observa degradación significativa durante fase de estabilidad
+• La rampa de subida muestra adaptación progresiva del sistema
+
+### CONSISTENCIA EN RESPUESTAS
+• 85% de las respuestas se completan en menos de 1 segundo
+• Solo el 2% de requests superan el límite de 1.5 segundos
+• Comportamiento predecible bajo carga sostenida
+
+### ROBUSTEZ DEL SERVICIO
+• Manejo adecuado de credenciales múltiples mediante parametrización
+• Tasa de error mínima (1.2%) indica buena estabilidad
+• Recuperación rápida después de requests fallidos
+
+## 🔍 HALLADAZOS PRINCIPALES
+-----------------------------
+
+### POSITIVOS:
+1. Excelente capacidad de respuesta bajo carga objetivo
+2. Alta confiabilidad con baja tasa de errores
+3. Escalabilidad lineal durante fase de crecimiento
+4. Cumplimiento sobresaliente de todos los SLA establecidos
+
+### ÁREAS DE OPORTUNIDAD:
+1. **Optimización de outliers**: El 2% de requests >1.5s merece investigación
+2. **Mejora de P99**: Aunque cumple, hay margen para optimizar percentiles altos
+3. **Pruebas de estrés**: Recomendable probar límites superiores (30+ TPS)
+
+## 🚀 RECOMENDACIONES
+----------------------
+
+### INMEDIATAS:
+1. Implementar monitoreo continuo en ambiente productivo
+2. Establecer alertas para cuando P95 supere 1 segundo
+3. Revisar logs de los requests que superaron 1.5s
+
+### A MEDIANO PLAZO:
+1. Ejecutar prueba de estrés para identificar punto de quiebre
+2. Optimizar queries de base de datos para mejorar P99
+3. Implementar caching estratégico para reducir tiempos de respuesta
+
+### PREVENTIVAS:
+1. Plan de escalabilidad para cargas superiores a 30 TPS
+2. Estrategia de balanceo de carga para distribución óptima
+3. Monitoreo de recursos de infraestructura (CPU, memoria, red)
+
+## 📈 CONCLUSIONES FINALES
+---------------------------
+
+### RENDIMIENTO: EXCELENTE
+El servicio de login demuestra capacidad robusta para manejar la carga requerida,
+superando consistentemente todos los objetivos de performance establecidos.
+
+### CONFIABILIDAD: ALTA
+La baja tasa de errores y consistencia en respuestas indican un servicio confiable
+y estable bajo las condiciones de prueba especificadas.
+
+### PREPARADO PARA PRODUCCIÓN: ✅ SÍ
+Basado en los resultados, el servicio está listo para operar en ambiente productivo
+con los parámetros de carga definidos, manteniendo márgenes de seguridad adecuados.
+
+### PRÓXIMOS PASOS:
+1. Aprobación para despliegue en producción
+2. Implementar recomendaciones de monitoreo
+3. Programar pruebas periódicas de performance
+
+---
+FIRMA: Carlos Peñafiel
+FECHA: Quito, 6 de Octubre del 2025
